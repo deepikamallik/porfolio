@@ -7,7 +7,7 @@
 
     <title>My Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
 <body>
@@ -30,8 +30,8 @@
 
     <!-- HOME -->
     <section id="home">
-<div class="profile-image">
-    <img src="image/pic1.jpeg" alt="Deepika Mallik" class="profile-img">
+<div >
+    <img src="{{ url_for('static', filename='image/pic1.jpeg') }}" alt="Deepika Mallik" class="profile-img">
 </div>
      
 
@@ -43,7 +43,7 @@
             Welcome to my professional portfolio.
         </p>
 
-        <a href="resume/deepika mallik 1.pdf" target="_blank">
+        <a href="{{ url_for('static', filename='resume/deepika mallik 1.pdf') }}" target="_blank">
             <button>Download Resume</button>
         </a>
 
@@ -140,19 +140,21 @@
 
         <h2>Contact Me</h2>
 
-        <form>
+        <div class="contact-form">
 
-            <input type="text" placeholder="Your Name">
+            <form action="/send-message" method="POST">
 
-            <input type="email" placeholder="Your Email">
+                <input type="text" name="name" placeholder="Your Name" required>
 
-            <textarea placeholder="Your Message"></textarea>
+                <input type="email" name="email" placeholder="Your Email" required>
 
-            <button type="submit">Send Message</button>
+                <textarea name="message" placeholder="Your Message" required></textarea>
 
-        </form>
+                <button type="submit">Send Message</button>
 
-    </section>
+            </form>
+
+        </div>
 
 
     <!-- FOOTER -->
@@ -163,7 +165,7 @@
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
