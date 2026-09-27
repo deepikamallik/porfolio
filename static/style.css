@@ -100,6 +100,8 @@ nav a:hover {
 
 /* ================= PROFILE IMAGE ================= */
 
+/* ================= PROFILE IMAGE ================= */
+
 .profile-img {
     width: 150px;
     height: 150px;
@@ -111,9 +113,11 @@ nav a:hover {
 
     border: 4px solid #00bfff;
     box-shadow: 0 0 20px #00bfff;
+
+    transition: 0.3s;
 }
 
-.profile-image:hover {
+.profile-img:hover {
     transform: scale(1.05);
 
     box-shadow:
